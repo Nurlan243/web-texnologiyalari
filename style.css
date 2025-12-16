@@ -1,3 +1,8 @@
+:root {
+  --brand: #e23535;
+  --card-w: 180px;
+  --gap: 16px;
+}
 
 * { box-sizing: border-box; }
 
@@ -11,6 +16,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: var(--brand);
   color: #fff;
   padding: 14px 24px;
   font-weight: 600;
@@ -34,13 +40,13 @@ body {
 
 .slider {
   position: relative;
-  overflow-x: auto;
-  scroll-behavior: smooth;
   padding: 8px 44px;
 }
-
-.slider::-webkit-scrollbar { display: none; }
-
+    
+.slider-track {
+  display: inline-flex;
+  gap: var(--gap);
+}
 
 .card {
   background: #fff;
@@ -80,19 +86,10 @@ body {
 .nav {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: none;
   background: rgba(0,0,0,0.6);
   color: #fff;
   font-size: 22px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  z-index: 2;
 }
-.nav.prev { left: 6px; }
-.nav.next { right: 6px; }
-.nav:disabled { opacity: 0.3; cursor: default; }
